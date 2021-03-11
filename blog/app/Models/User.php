@@ -11,6 +11,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function isadmin(){
+        return $this->user()->where('usertype', 'admin')->exists();
+    }
+
     /**
      * The attributes that are mass assignable.
      *

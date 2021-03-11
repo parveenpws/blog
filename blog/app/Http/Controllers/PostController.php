@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // public function getUser(){
-    //     $users=User::orderBy('created_at','desc')->get();
-    //     return view('blog.index', ['users' => $users]);
-    // }
-
     public function getIndex()
     {
         // $posts= Post::all();

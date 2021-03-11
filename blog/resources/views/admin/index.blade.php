@@ -27,13 +27,15 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table">
-          
+            <thead>
             <tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Title</th>
-            <th>created_at</th>
+            <th>Created_at</th>
             <th>Action</th>
             </tr>
+            </thead>
+            <tbody>
             @foreach($posts as $post)
             <tr>
             <td>{{ $post->id }}</td>
@@ -41,10 +43,11 @@
             <td>{{ $post->created_at }}</td>
             <td>
              
-            <a href="{{ route('admin.edit', ['id' => $post->id]) }}">Edit</a>
-            <a href="{{ route('admin.delete', ['id' => $post->id]) }}">Delete</a></td>
+            <a class="btn btn-warning" href="{{ route('admin.edit', ['id' => $post->id]) }}">Edit</a>
+            <a class="btn btn-danger" href="{{ route('admin.delete', ['id' => $post->id]) }}">Delete</a></td>
             </tr>
             @endforeach
+            </tbody>
             </table>
            
         </div>
@@ -57,13 +60,15 @@
     <div id="menu1" class="tab-pane fade">
       <h3>Users</h3>
       <table class="table">
-          
+          <thead>
           <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>created_at</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Created_at</th>
           </tr>
+          </thead>
+          <tbody>
           @foreach($users as $user)
           <tr>
           <td>{{ $user->id }}</td>
@@ -72,10 +77,9 @@
           <td>{{ $user->created_at }}</td>
           </tr>
           @endforeach
-          </table>
-         
-    </div>
-  
+          </tbody>
+          </table>    
+    </div>  
   </div>
 @endsection
 

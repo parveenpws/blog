@@ -28,16 +28,13 @@ Route::get('post/{id}', [
     'uses' => 'PostController@getPost',
     'as' => 'blog.post'
 ]);
-// Route::get('/admin', [
-//     'uses' => 'PostController@getUser',
-//     'as' => 'admin.index'
-// ]);
+
 
 Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
-Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
+Route::group(['prefix' => 'admin','middleware'=>['auth','admin']], function() {
 
  
 
